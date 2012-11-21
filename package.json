@@ -1,0 +1,20 @@
+{
+    "name": "pov",
+    "description": "lightweight multivariate a/b testing",
+    "version": "1.0.1",
+    "keywords": ["pov", "ender", "ab", "a/b", "multivariate", "cohorts"],
+    "homepage": "http://example.com",
+    "authors": ["Dan Lewis <jdanlewis@gmail.com>"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jdanlewis/pov.git"
+    },
+    "dependencies": {
+        "domready": "*",
+        "bean": "*",
+        "bonzo": "*",
+        "qwery": "*",
+        "underscore": "*"
+    },
+    "main": "./src/pov.js"
+} 
