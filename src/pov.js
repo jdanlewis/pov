@@ -1,12 +1,13 @@
 /* pov.js
  *
  */
-(function (name, definition) {
+(function (name, definition, global) {
     // play nice with jslint, AMD, and CommonJS
     /*global module: true, define: true*/
-    if (typeof define == 'function') { define(definition); }
-    else if (typeof module != 'undefined') { module.exports = definition(); }
-    else { this[name] = definition(); }
+    console.log(global);
+    if (typeof module != 'undefined' && module.exports) { module.exports = definition(); }
+    else if (typeof global.define == 'function' && global.define.amd) { define(name, definition); }
+    else { global[name] = definition(); }
 }('pov', function () {
 
     var pov = {};  
@@ -87,4 +88,4 @@
         gaq: gaq
     };
 
-}));
+}, this));
