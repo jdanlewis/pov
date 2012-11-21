@@ -3,7 +3,6 @@
     "description": "lightweight multivariate a/b testing",
     "version": "1.0.4",
     "keywords": ["pov", "ender", "ab", "a/b", "multivariate", "cohorts"],
-    "homepage": "http://example.com",
     "authors": ["Dan Lewis <jdanlewis@gmail.com>"],
     "repository": {
         "type": "git",
