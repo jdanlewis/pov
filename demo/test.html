@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Test</title>
+        <script src="ender.js"></script>
+        <link rel="stylesheet" href="../src/pov.css"></link>
+        <script>
+            var pov = require('pov');
+            $.domReady(function() {
+                pov.setGoals([
+                    {
+                        target: '.signup'
+                        // defaults:
+                        // on: 'click'
+                        // category: 'signup'
+                        // action: 'click'
+                    },
+                    {
+                        target: '.slogan',
+                        on: 'mouseover',
+                        // GA vars
+                        category: 'slogan',
+                        action: 'hover',
+                        opt_label: pov.which('slogan'),
+                        opt_value: 100,
+                        opt_noninteraction: true
+                    }
+                ]);
+                $('.signup').on("click", function() {
+                    console.log("varying pov");
+                    pov.vary();
+                });
+            });
+        </script>
+        <style type="text/css">
+            /* slogan experiment */
+            .slogan {
+                color: blue;
+                border: 1px solid blue;
+                padding: 10px;
+                font-size: 2em;
+            }
+            .bigSlogan {
+                font-size: 2.5em;
+            }
+            .bigGreenSlogan {
+                color: green;
+                font-size: 2.5em;
+            }
+            .bigRedSlogan {
+                color: red;
+                font-size: 2.5em;
+                border: 3px dashed green !important;
+            }
+            /* signup button experiment */
+            .signup {
+                font-size: 1.5em;
+                padding: .2em;
+            }
+            .signupBig {
+                font-size: 2em;
+                padding: 2em;
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="slogan" data-name="Slogan Experiment">Slogan</h1>
+        <h1 class="slogan v bigSlogan">Hey, it's a slogan!</h1>
+        <h1 class="slogan v bigGreenSlogan">Whoa, slogan!</h1>
+        <h1 class="slogan v bigRedSlogan">WARNING: SLOGAN</h1>
+        <p>Welcome to the test page</p>
+        <input type="button" class="signup" value="Signup!">
+        <input type="button" class="signup v signupBig" value="Signup!">
+        <input type="button" class="signup v signupNoKidding" value="No Kidding - Sign up!">
+    </body>
+</html>
+

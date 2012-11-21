@@ -1,0 +1,3 @@
+Before opening test.html in your browser:
+
+    $ ender build pov
