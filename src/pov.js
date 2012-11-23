@@ -10,9 +10,8 @@
     else { global[name] = definition(); }
 }('pov', function () {
 
-    var pov = {};  
-    var gaq = window.gaq ?
-        function(x) { window.gaq.push(x); } : function(x) { console.log(x); };
+    var pov = {}, 
+        gaq = function(x) { console.log(x); };  
 
     var setGoals = function(goals) {
         // hook up event handlers
@@ -78,7 +77,10 @@
     };
 
     // 
-    $.domReady(vary);
+    $.domReady(function() {
+        gaq = global._gaq || gaq;
+        vary();
+    });
 
     //
     return {
