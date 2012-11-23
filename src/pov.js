@@ -78,7 +78,11 @@
 
     // 
     $.domReady(function() {
-        gaq = global._gaq || gaq;
+        if (global._gaq) {
+            gaq = function(x) {
+                global._gaq.push(x);
+            };
+        }
         vary();
     });
 
